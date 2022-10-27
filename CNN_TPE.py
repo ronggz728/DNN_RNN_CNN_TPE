@@ -51,8 +51,8 @@ def percept(args):
     cost, accuracy = ppn.evaluate(test_x, test_y, verbose=False)
     return -accuracy
 
-space = dict(filters = hp.quniform("filters", 1,50,1), kernel_size =hp.quniform("kernel_size",3,9,2), units = hp.quniform("units", 10,100,1),
-             pool_size = hp.quniform("pool_size", 2,9,1), rate=hp.uniform('rate', 0, 0.5), epochs =hp.quniform("epochs", 10,200,1),
+space = dict(filters = hp.quniform("filters", 1,50,1), kernel_size =hp.quniform("kernel_size",1,10,2), units = hp.quniform("units", 10,100,1),
+             pool_size = hp.quniform("pool_size", 1,10,1), rate=hp.uniform('rate', 0, 0.5), epochs =hp.quniform("epochs", 10,200,1),
              optimizer = {'optimizer' : hp.choice('optimizer',[{'optimizer': 'adam'},{'optimizer': 'adamax'},{'optimizer': 'sgd'},{'optimizer': 'rmsprop'},{'optimizer': 'adagrad'},{'optimizer': 'adadelta'},{'optimizer': 'nadam'}])})
 
 # Trials object to track progress
