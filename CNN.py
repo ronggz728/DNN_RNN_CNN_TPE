@@ -32,7 +32,7 @@ test_y = np_utils.to_categorical(test_data_y,2)
 model = Sequential()
 #添加输入层
 model.add(Conv1D(20,3,activation='relu',input_shape=(17,1)))
-model.add(MaxPool1D(3))
+model.add(MaxPool1D(2))
 model.add(Flatten())
 model.add(Dense(50,activation='relu'))
 model.add(Dropout(0))
